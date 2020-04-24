@@ -1,0 +1,38 @@
+
+.search-form {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    width: 50%;
+    border: none;
+    padding: 10px;
+}
+
+.search-button {
+    background: lightcoral;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+}
+
+.HomePage {
+    background-color: blue;
+}
+
+.recipeSection {
+    max-width: 65%;
+}
+
+.checkListSection {
+    padding: 10px;
+    max-width: 30%;
+    background-color: chartreuse;
+    display: flex;
+    margin: 10px;
+    overflow-x: scroll;
+    max-height: 100vh;
+}

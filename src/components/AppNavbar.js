@@ -28,7 +28,7 @@ const AppNavbar = (props) => {
                         <NavLink href="/foodnews">Food News</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/foodtrends">Food Trebds</NavLink>
+                        <NavLink href="/foodtrends">Food Trends</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="/myrecipes">My Recipes</NavLink>

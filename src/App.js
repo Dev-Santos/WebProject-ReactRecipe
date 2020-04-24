@@ -19,80 +19,41 @@ import './App.css';
 //Imported Bootstrap elements
 // import {Container} from 'reactstrap';
 
-const App = () => {
-  const APP_ID = "d66e2a9d";
-  const APP_KEY = "7cc5b4178a5c8cd7de97819f02da5f85";
+class App extends React.Component {
 
-  const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('chicken');
+  render() {
 
-  useEffect( () => {
-    getRecipes();
-  }, [query]);
+    return (    
+      <div>
+        <Router>
 
-  const getRecipes = async () => {
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
-    const data = await response.json();
-    console.log(data);
-    setRecipes(data.hits);
-  };
+          <AppNavbar/>
 
-  const updateSearch = e => {
-    setSearch(e.target.value);
-  };
+          <Switch>
 
-  const getSearch = e => {
-    e.preventDefault();
-    setQuery(search);
-    setSearch('');
-  };
+            <Route path={["/home", "/", ""]} exact component={HomePage}/>
 
-  return (    
-    <div className="App">
-      <Router>
+            <Route path={"/foodnews"} exact component={FoodNews}/>
 
-        <AppNavbar/>
+            <Route path={"/foodtrends"} exact component={FoodTrends}/>
 
-        <Switch>
+            <Route path={"/myrecipes"} exact component={MyRecipes}/>
 
-          <Route path={["/home", "/", ""]} exact component={HomePage}/>
+            <Route path={"/addRecipe"} exact component={AddRecipe}/>
 
-          <Route path={"/foodnews"} exact component={FoodNews}/>
+            <Route path={"/login"} exact component={Login}/>
 
-          <Route path={"/foodtrends"} exact component={FoodTrends}/>
+            {/* <Route path={"/signup"} exact component={HomePage}/> */}
 
-          <Route path={"/myrecipes"} exact component={MyRecipes}/>
+          </Switch>
+          
+          <Footer />
 
-          <Route path={"/addRecipe"} exact component={AddRecipe}/>
+        </Router>  
 
-          <Route path={"/login"} exact component={Login}/>
-
-          {/* <Route path={"/signup"} exact component={HomePage}/> */}
-
-        </Switch>
-        
-        <Footer />
-
-      </Router>
-      
-      <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar" type="text" value={search} onChange={updateSearch} />
-        <button className="search-button" type="submit">Search</button>
-      </form>     
-      <div className="recipes">
-        {recipes.map(recipe => (
-          <Recipe 
-            key={recipe.recipe.label}
-            title={recipe.recipe.label} 
-            calories={recipe.recipe.calories} 
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredients}
-          />
-        ))};
-      </div>
-    </div>
-  );
-};
+      </div>         
+    );
+  }
+}
 
 export default App;

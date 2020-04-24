@@ -6,36 +6,31 @@ import Typography from '@material-ui/core/Typography';
 
 //Footer Component Specification using React Hooks
 function Footer(){
+         
+  //The following is rendered/displayed on the browser
+  return(
 
-       
-    //The following is rendered/displayed on the browser
-    return(
+    <footer style={{backgroundColor: "#565656"}}>
+      
+      <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+      Contact Us Via:
+      </Typography>
 
-        <React.Fragment>
+      {/* Social Media Icons */}
+      <div className="text-center">
+          <button type="button"><i className="fa fa-facebook-f fa-2x"></i> Facebook</button>
+          <button type="button"><i className="fa fa-twitter fa-2x"></i> Twitter</button>
+          <button type="button"><i className="fa fa-google fa-2x"></i> Google+</button>
+          <button type="button"><i className="fa fa-instagram fa-2x"></i> Instagram</button>
+      </div>
 
-             <footer> {/* className={classes.footer} */}
-                
-                <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                Contact Us Via:
-                </Typography>
+      <br/>
 
-                {/* Social Media Icons */}
-                <div className="text-center">
-                    <button type="button"><i className="fa fa-facebook-f fa-2x"></i> Facebook</button>
-                    <button type="button"><i className="fa fa-twitter fa-2x"></i> Twitter</button>
-                    <button type="button"><i className="fa fa-google fa-2x"></i> Google+</button>
-                    <button type="button"><i className="fa fa-instagram fa-2x"></i> Instagram</button>
-                </div>
+      {/* <Copyright /> Positioning of the Copyright Component defined above */}
 
-                <br/>
-
-                {/* <Copyright /> Positioning of the Copyright Component defined above */}
-
-            </footer>
-
-    </React.Fragment>
+    </footer>
     
-    );
+  )
 }
 
 export default Footer;//Export the component to be used
