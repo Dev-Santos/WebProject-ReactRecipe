@@ -10,24 +10,23 @@ function Footer(){
   //The following is rendered/displayed on the browser
   return(
 
-    <footer style={{backgroundColor: "#565656"}}>
-      
-      <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-      Contact Us Via:
-      </Typography>
+    <footer style={{backgroundColor: "#3f3160"}}>
+      <div>
+        <Typography variant="subtitle1" align="center" color="white" component="p">
+        Contact Us Via:
+        </Typography>
 
-      {/* Social Media Icons */}
-      <div className="text-center">
-          <button type="button"><i className="fa fa-facebook-f fa-2x"></i> Facebook</button>
-          <button type="button"><i className="fa fa-twitter fa-2x"></i> Twitter</button>
-          <button type="button"><i className="fa fa-google fa-2x"></i> Google+</button>
-          <button type="button"><i className="fa fa-instagram fa-2x"></i> Instagram</button>
+
+        {/* Social Media Icons */}
+        <div className="text-center">
+            <button type="button"><i className="fa fa-facebook-f fa-2x"></i> Facebook</button>
+            <button type="button"><i className="fa fa-twitter fa-2x"></i> Twitter</button>
+            <button type="button"><i className="fa fa-google fa-2x"></i> Google+</button>
+            <button type="button"><i className="fa fa-instagram fa-2x"></i> Instagram</button>
+        </div>
+
+        <br/>
       </div>
-
-      <br/>
-
-      {/* <Copyright /> Positioning of the Copyright Component defined above */}
-
     </footer>
     
   )

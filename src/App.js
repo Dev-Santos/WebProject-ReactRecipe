@@ -1,8 +1,8 @@
-import React,{useEffect, useState} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 //Imported Components
-import Recipe from "./components/Recipe";
+// import Recipe from "./components/Recipe";
 import AppNavbar from "./components/AppNavbar";
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
@@ -13,11 +13,7 @@ import FoodTrends from './components/FoodTrends';
 import Login from './components/Login';
 
 //Imported CSS Files
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
-//Imported Bootstrap elements
-// import {Container} from 'reactstrap';
 
 class App extends React.Component {
 
