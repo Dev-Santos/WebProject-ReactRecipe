@@ -14,6 +14,7 @@ const Recipe = ({title, calories, image, ingredients}) => {
             </ol>
             {/* <p>Calories: {calories.toFixed(0)}</p> */}
             <img className={style.image} src={image} alt="" />
+            <button className={style.buttonPos}>Save Recipe</button>
         </div>
     );
 }

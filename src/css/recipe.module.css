@@ -16,3 +16,9 @@
     width: 100px;
     height: 100px;
 }
+
+.buttonPos {
+    border-radius: 5px;
+    background-color: chartreuse;
+    margin-top: 20px;
+}

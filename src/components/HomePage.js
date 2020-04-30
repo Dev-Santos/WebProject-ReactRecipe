@@ -51,7 +51,7 @@ const HomePage = () => {
                         image={recipe.recipe.image}
                         ingredients={recipe.recipe.ingredients}
                         />
-                    ))}
+                    ))}                    
                     </div>
                 </div>
                 <div className="checkListSection">
