@@ -15,6 +15,7 @@ db.authenticate()
     .catch(err => console.log('Error: ' + err));//If the database is not connected successfully
 
 
+    
 //Backend route to send user details to the back-end database
 app.post('/', (req, res) => {
       
