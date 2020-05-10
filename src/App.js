@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 //Imported Components
-// import Recipe from "./components/Recipe";
 import AppNavbar from "./components/AppNavbar";
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
@@ -14,11 +13,13 @@ import Login from './components/Login';
 
 //Imported CSS Files
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
 
   render() {
 
+    //JSX
     return (    
       <div>
         <Router>
@@ -35,7 +36,7 @@ class App extends React.Component {
 
             <Route path={"/myrecipes"} exact component={MyRecipes}/>
 
-            <Route path={"/addRecipe"} exact component={AddRecipe}/>
+            <Route path={"/addrecipe"} exact component={AddRecipe}/>
 
             <Route path={"/login"} exact component={Login}/>
 

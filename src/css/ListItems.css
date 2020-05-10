@@ -3,8 +3,14 @@
     width: 80%;
     background-color: #bf07ac;
     height: auto;
+    min-height: 40px;
     margin: 20px auto;
     border-radius: 5px;
+}
+
+.notes {
+    width: 100%;
+    text-transform: capitalize;
 }
 
 .list p {
@@ -29,6 +35,8 @@
     color: white;
     font-size: 18px;
     width: 80%;
+    list-style-type: none;
+    word-wrap: break-word;
 }
 
 .list p input:focus {

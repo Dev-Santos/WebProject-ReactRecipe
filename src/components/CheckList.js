@@ -3,10 +3,49 @@ import ListItems from './ListItems';
 import '../css/checklist.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 library.add(faTrash);
 
 class CheckList extends React.Component {
+
+    state = {
+        body: ''
+    };
+
+    handleChange = ({ target }) => {
+        const { value } = target;
+        this.setState({ body: value });
+    };
+
+    submit = (event) => {
+        event.preventDefault();
+
+        const payload = {
+            body: this.state.body
+        };
+
+        axios({
+            url: 'http://localhost:8080/api/save',
+            method: 'POST',
+            data: payload
+        })
+            .then(() => {
+                console.log('Data has been sent to the server');
+                this.setState(this.state.body);
+                this.resetUserInputs();
+            })
+            .catch(() => {
+                console.log('Internal server error');
+            });
+    };
+
+    resetUserInputs = () => {
+        this.setState({
+            body: ''
+        });
+    };
+
     constructor(props){
         super(props);
         this.state={
@@ -62,20 +101,32 @@ class CheckList extends React.Component {
         })
     }
     render(){
+
+        // console.log('State: ', this.state);
+
+        //JSX
         return (
             <div className="CheckList">
                 {/* <h3>Checklist Section: </h3>
                 <p>This section would allow the user to create a personal checklist where they can add/edit/delete items</p> */}
 
                 <header>
-                    <form id="to-do-form" onSubmit={this.addItem}>
-                        <input type="text" placeholder="Enter item: "
-                        value={this.state.currentItem.text} onChange={this.handleInput} />
+                    <form id="to-do-form" onSubmit={this.submit}>
+                        <input 
+                            type="text"
+                            name="newNote"
+                            placeholder="Enter item: "
+                            value= {this.state.body}
+                            onChange={this.handleChange}
+                        />
+                        {/* <input type="text" placeholder="Enter item: "
+                        value={this.state.currentItem.text} onChange={this.handleInput} /> */}
                         <button type="submit">Add Item</button>
                     </form>
-                    <ListItems items = {this.state.items}
+                    <ListItems />
+                    {/* <ListItems items = {this.state.items}
                     deleteItem = {this.deleteItem}
-                    setUpdate = {this.setUpdate}></ListItems>
+                    setUpdate = {this.setUpdate}></ListItems> */}
                 </header>
                 
             </div>

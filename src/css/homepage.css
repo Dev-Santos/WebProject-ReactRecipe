@@ -22,17 +22,3 @@
 .HomePage {
     background-color: #9266ff;
 }
-
-.recipeSection {
-    max-width: 70%;
-}
-
-.checkListSection {
-    /* padding: 10px; */
-    max-width: 30%;
-    /* background-color: chartreuse;
-    display: flex;
-    margin: 10px;
-    overflow-x: scroll;
-    max-height: 100vh; */
-}

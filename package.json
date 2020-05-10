@@ -11,10 +11,15 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
-    "bootstrap": "^3.4.1",
+    "bootstrap": "^4.4.1",
     "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "jade": "^1.11.0",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.11",
+    "morgan": "^1.10.0",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.3",
     "react": "^16.13.1",
@@ -31,9 +36,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run start\""
+    "dev": "concurrently -n 'server,client' -c 'blue,green' \"npm run server\" \"npm run start\""
   },
-  "proxy": "http://localhost:81",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -48,5 +52,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

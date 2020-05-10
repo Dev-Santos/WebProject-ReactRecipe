@@ -37,15 +37,15 @@ const HomePage = () => {
       <div className="HomePage">
         <div className="container">   
             <div className="row">  
-                <div className="recipeSection">
+                <div className="col-md-9 col-sm-9 col-xs-9">
                     <form onSubmit={getSearch} className="search-form">
                         <input placeholder="Search for any recipe..." className="search-bar" type="text" value={search} onChange={updateSearch} />
                         <button className="search-button" type="submit">Search</button>
                     </form>     
                     <div className="recipes">
-                    {recipes.map(recipe => (
+                    {recipes.map((recipe, index) => (
                         <Recipe 
-                        key={recipe.recipe.label}
+                        key={index}
                         title={recipe.recipe.label} 
                         calories={recipe.recipe.calories} 
                         image={recipe.recipe.image}
@@ -54,7 +54,7 @@ const HomePage = () => {
                     ))}                    
                     </div>
                 </div>
-                <div className="checkListSection">
+                <div className="col-md-3 col-sm-3 col-xs-3">
                     <CheckList />
                 </div>
 

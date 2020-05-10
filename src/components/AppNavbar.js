@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     Collapse,
     Navbar,
@@ -9,41 +10,41 @@ import {
     NavLink,
   } from 'reactstrap';
 
-import axios from 'axios';
+// import axios from 'axios';
 
 const AppNavbar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const [name, setName] = useState('');
+    // const [name, setName] = useState('');
 
-    //Store name to the state of the component
-    const changeName = (e) => {
-        setName(e.target.value);
-    }
+    // //Store name to the state of the component
+    // const changeName = (e) => {
+    //     setName(e.target.value);
+    // }
 
-    //Submit name to the backend
-    const submitName = () => {
+    // //Submit name to the backend
+    // const submitName = () => {
 
-        //Headers
-        const config = {
-            headers: {
-                "Content-type" : "application/json" 
-            }
-        };
+    //     //Headers
+    //     const config = {
+    //         headers: {
+    //             "Content-type" : "application/json" 
+    //         }
+    //     };
 
-        //Create request body
-        const body = JSON.stringify({name});
+    //     //Create request body
+    //     const body = JSON.stringify({name});
         
-        //Access the backend api (Express & Nodejs) (in the server.js file) to send user information from the database
-        axios.post('/', body, config)
-        .then(res => {
-            console.log(res.data); 
-        })
-        .catch(err => { //If an error is caught
-           console.log(err);
-        });
+    //     //Access the backend api (Express & Nodejs) (in the server.js file) to send user information from the database
+    //     axios.post('/', body, config)
+    //     .then(res => {
+    //         console.log(res.data); 
+    //     })
+    //     .catch(err => { //If an error is caught
+    //        console.log(err);
+    //     });
 
-    }
+    // }
 
     const toggle = () => setIsOpen(!isOpen);
 
@@ -75,12 +76,12 @@ const AppNavbar = (props) => {
                         <NavLink href="/login">Login/Sign-up</NavLink>
                     </NavItem>
                 </Nav>
-                <Nav className="mr-0" navbar>
+                {/* <Nav className="mr-0" navbar>
                     <NavItem>
                         <input placeholder="Enter name" className="search-bar" type="text" onChange={changeName}/>
-                        <button className="search-button" type="submit" onClick={submitName}>Search</button>
+                        <button className="search-button" type="submit" onClick={submitName}>Add Record</button>
                     </NavItem>
-                </Nav>
+                </Nav> */}
                 
                 </Collapse>
             </Navbar>          

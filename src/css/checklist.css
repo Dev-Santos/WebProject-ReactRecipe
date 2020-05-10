@@ -4,6 +4,7 @@
     padding: 10px;
     display: flex;
     margin: 10px auto;
+    width: auto;
 }
 
 #to-do-form input {
@@ -36,8 +37,3 @@
     color: #fff;
 }
 
-.List {
-    margin-top: 110px;
-    margin-left: -20px;
-    background-color: chartreuse;
-}
